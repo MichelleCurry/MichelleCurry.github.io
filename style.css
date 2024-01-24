@@ -1,36 +1,47 @@
 /* global */
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
-.grid-2{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-}
-
-img {
-    width: 10em;
-    height: auto;
-}
-
-body{
+body {
     margin: 0;
-    padding: 0;
-    height: 100vh;
-    font-family: 'Roboto', sans-serif;
     background-color: #141013;
+    font-family: 'Roboto', sans-serif;
     color: #7A7C80;
-    box-shadow:
-        inset #141013 0 0 0 4px,
-		inset pink 0 0 0 8px,
-		inset #E2AAB4 0 0 0 4px,
-		inset #C4949D 0 0 0 14px,
-		inset #A77E86 0 0 0 15px,
-		inset #8A686F 0 0 0 20px,
-		inset #6C5258 0 0 0 21px,
-		inset #4F3C41 0 0 0 26px,
-		inset #31262A 0 0 0 27px;
 }
 
-h2,.white{
+.content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+.border {
+    padding: 30px; 
+    box-shadow: inset #141013 0 0 0 4px,
+                inset pink 0 0 0 8px,
+                inset #E2AAB4 0 0 0 4px,
+                inset #C4949D 0 0 0 14px,
+                inset #A77E86 0 0 0 15px,
+                inset #8A686F 0 0 0 20px,
+                inset #6C5258 0 0 0 21px,
+                inset #4F3C41 0 0 0 26px,
+                inset #31262A 0 0 0 27px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%; 
+    max-width: 1200px;
+    margin: 3% auto; 
+}
+
+h2{
+    font-size: 1.7rem;
+    margin-bottom: 10px;
     color: #fff;
 }
 
@@ -38,96 +49,77 @@ a{
     color: #7A7C80;
     text-decoration: none;
 }
-/* section 1 */
-.section-1{
-    padding-top: 30vh;
-    text-align: center;
-}
 
-.section-1 p{
+p{
     font-size: 1.1rem;
     padding-bottom: 10px;
     margin:0;
 }
 
-.section-1 h2{
-    font-size: 1.7rem;
-    margin-bottom: 10px;
+.section1 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 0;
 }
 
-.section-1 a{
+.section1 img {
+    width: 10em;
+    height: auto;
+    max-width: 100%;
+    align-self: center; 
+}
+
+.section1 .social-links {
+    display: flex; 
+    justify-content: center; 
+}
+
+.section2 {
+    flex: 1;
+    padding: 20px;
+}
+
+.section1 a{
     font-size: 1.5rem;
     padding: 10px;
 }
-/* section 2 */
-.section-2{
-    padding-top: 20vh;
-    width: 70%;
-}
 
-.section-2 h2{
-    font-size: 1.7rem;
-    margin-bottom: 10px;
-}
-
-.section-2 p{
-    font-size: 1.1rem;
-    padding-bottom: 50px;
-    margin:0;
-}
-
-.section-2 a{
-    /* display: block; */
+.section2 a {
     padding: 5px;
-    /* font-size: 1.2rem; */
-    padding-left: 0;
     width: 100px;
 }
 
 .caption {
     font-size: 0.7rem;
 }
+
 /* animations / utilities */
-.section-2 a:hover{
+a:hover{
     font-size: 1.3rem;
     color: #fff;
     cursor: pointer;
     transition: 0.2s;
 }
 
-.section-1 a:hover{
-    color: #fff;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.white:hover{
-    position: relative;
-    padding-left: 10px;
-}
-
 ul.book {
     list-style: "📚   ";
     list-style-position: outside;
+    padding-left: 20px;
 }
 
 ul.paper {
     list-style: "⚡   ";
     list-style-position: outside;
+    padding-left: 20px;
 }
 
-/* media queres */
-@media(max-width:780px){
-    .grid-2{
-        grid-template-columns: 1fr;
-    }
-    .section-1{
-        padding:0;
-        padding-top: 5rem;
-    }
-    .section-2{
-        padding: 0;
-        padding-left: 1.5rem;
-        padding-top: 2rem;
+@media (max-width: 768px) {
+    .section1,
+    .section2 {
+        flex: 1 100%;
+        padding: 10px;
     }
 }
